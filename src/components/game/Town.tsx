@@ -1,3 +1,4 @@
+import * as THREE from "three";
 import { Html } from "@react-three/drei";
 import { GRAVES } from "@/lib/game/store";
 import type { TownData } from "./town";
@@ -42,7 +43,7 @@ export function Town({ data }: { data: TownData }) {
           {i % 3 === 0 && (
             <mesh position={[0, b.h * 0.55, b.d / 2 + 0.02]}>
               <planeGeometry args={[1.1, 1.4]} />
-              <meshBasicMaterial color="#ff4b0f" toneMapped={false} />
+              <meshBasicMaterial color="#ff4b0f" toneMapped={false} side={THREE.DoubleSide} />
             </mesh>
           )}
         </group>
@@ -58,7 +59,7 @@ export function Town({ data }: { data: TownData }) {
             <boxGeometry args={[0.7, 0.5, 0.7]} />
             <meshBasicMaterial color="#ffb066" toneMapped={false} />
           </mesh>
-          <pointLight position={[0, 5.1, 0]} color="#ff8a3d" intensity={14} distance={22} decay={2} />
+          <pointLight position={[0, 5.1, 0]} color="#ff8a3d" intensity={260} distance={34} decay={2} />
         </group>
       ))}
 
@@ -90,7 +91,7 @@ export function Town({ data }: { data: TownData }) {
             <cylinderGeometry args={[1, 1, 0.35, 8, 1, false, 0, Math.PI]} />
             <meshStandardMaterial color="#2a2c30" flatShading roughness={0.9} />
           </mesh>
-          <pointLight position={[0, 1.6, 0]} color="#ff4b0f" intensity={2.2} distance={7} />
+          <pointLight position={[0, 1.6, 0]} color="#ff4b0f" intensity={40} distance={12} />
           <Html position={[0, 3.4, -1.6]} center distanceFactor={16} zIndexRange={[5, 0]}>
             <div className="grave-plate">{g.name}</div>
           </Html>
