@@ -363,8 +363,10 @@ export function Scene() {
     if (torchRef.current && torchTargetRef.current) {
       const dir = new THREE.Vector3();
       camera.getWorldDirection(dir);
+      torchRef.current.target = torchTargetRef.current;
       torchRef.current.position.copy(camera.position);
       torchTargetRef.current.position.copy(camera.position).addScaledVector(dir, 12);
+      torchRef.current.updateMatrixWorld();
       torchRef.current.intensity = 70 + Math.sin(performance.now() / 130) * 8;
     }
 
