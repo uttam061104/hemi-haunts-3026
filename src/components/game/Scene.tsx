@@ -520,7 +520,6 @@ export function Scene() {
         angle={0.62}
         penumbra={0.55}
         decay={1.4}
-        {...(torchTargetRef.current ? { target: torchTargetRef.current } : {})}
       />
 
       {/* ghosts */}
