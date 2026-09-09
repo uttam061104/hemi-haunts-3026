@@ -382,10 +382,11 @@ export function Scene() {
     if (vmRef.current) {
       vmRef.current.position.copy(camera.position);
       vmRef.current.quaternion.copy(camera.quaternion);
-      vmRef.current.translateX(0.42);
-      vmRef.current.translateY(-0.32 + Math.sin(performance.now() / 420) * 0.012);
-      vmRef.current.translateZ(-0.75 + swing.current * 0.35);
+      vmRef.current.translateX(0.5);
+      vmRef.current.translateY(-0.52 + Math.sin(performance.now() / 420) * 0.012);
+      vmRef.current.translateZ(-1.15 + swing.current * 0.35);
       vmRef.current.rotateX(swing.current * 0.9);
+      vmRef.current.scale.setScalar(0.62);
       vmRef.current.visible = state.camera === "fpp";
     }
     flash.current = Math.max(0, flash.current - dt);
