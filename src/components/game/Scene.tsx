@@ -359,6 +359,15 @@ export function Scene() {
     );
     camera.lookAt(look);
 
+    // torch follows the view
+    if (torchRef.current && torchTargetRef.current) {
+      const dir = new THREE.Vector3();
+      camera.getWorldDirection(dir);
+      torchRef.current.position.copy(camera.position);
+      torchTargetRef.current.position.copy(camera.position).addScaledVector(dir, 12);
+      torchRef.current.intensity = 70 + Math.sin(performance.now() / 130) * 8;
+    }
+
     // player body
     if (playerRef.current) {
       playerRef.current.position.set(pos.current.x, 0, pos.current.z);
