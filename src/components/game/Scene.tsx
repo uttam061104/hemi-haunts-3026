@@ -546,8 +546,8 @@ function WeaponModel({ id }: { id: string }) {
   if (id === "shotgun") {
     return (
       <group>
-        <mesh position={[0, 0, -0.35]}>
-          <cylinderGeometry args={[0.045, 0.05, 0.9, 8]} rotation={[Math.PI / 2, 0, 0]} />
+        <mesh position={[0, 0, -0.35]} rotation-x={Math.PI / 2}>
+          <cylinderGeometry args={[0.045, 0.05, 0.9, 8]} />
           <meshStandardMaterial color="#16181c" flatShading />
         </mesh>
         <mesh position={[0, -0.06, 0.18]} rotation-x={0.15}>
