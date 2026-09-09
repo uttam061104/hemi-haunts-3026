@@ -13,13 +13,13 @@ export function GameCanvas() {
         gl={{ antialias: false }}
       >
         <color attach="background" args={["#05060a"]} />
-        <fogExp2 attach="fog" args={["#05060a", 0.032]} />
-        <ambientLight intensity={0.12} color="#5b6b8a" />
-        <hemisphereLight args={["#243046", "#05060a", 0.25]} />
+        <fogExp2 attach="fog" args={["#070910", 0.016]} />
+        <ambientLight intensity={0.55} color="#6b7ea6" />
+        <hemisphereLight args={["#3d4c6b", "#0b0d12", 0.8]} />
         <directionalLight
           position={[-30, 40, -20]}
-          intensity={0.35}
-          color="#7f93c9"
+          intensity={0.9}
+          color="#8fa3d6"
           castShadow
           shadow-mapSize-width={1024}
           shadow-mapSize-height={1024}
