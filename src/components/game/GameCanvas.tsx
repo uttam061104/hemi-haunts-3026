@@ -14,11 +14,11 @@ export function GameCanvas() {
       >
         <color attach="background" args={["#05060a"]} />
         <fogExp2 attach="fog" args={["#070910", 0.016]} />
-        <ambientLight intensity={1.1} color="#7d8fb5" />
-        <hemisphereLight args={["#4c5c80", "#12141a", 1.4]} />
+        <ambientLight intensity={0.42} color="#7d8fb5" />
+        <hemisphereLight args={["#3a4763", "#0e1014", 0.7]} />
         <directionalLight
           position={[-30, 40, -20]}
-          intensity={1.8}
+          intensity={0.8}
           color="#8fa3d6"
           castShadow
           shadow-mapSize-width={1024}

@@ -59,7 +59,7 @@ export function Town({ data }: { data: TownData }) {
             <boxGeometry args={[0.7, 0.5, 0.7]} />
             <meshBasicMaterial color="#ffb066" toneMapped={false} />
           </mesh>
-          <pointLight position={[0, 5.1, 0]} color="#ff8a3d" intensity={260} distance={34} decay={2} />
+          <pointLight position={[0, 5.1, 0]} color="#ff8a3d" intensity={120} distance={26} decay={2} />
         </group>
       ))}
 
