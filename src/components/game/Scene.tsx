@@ -508,6 +508,19 @@ export function Scene() {
       </group>
       <pointLight ref={flashRef} color="#ffb066" intensity={0} distance={26} decay={2} />
 
+      {/* handheld torch */}
+      <object3D ref={torchTargetRef} />
+      <spotLight
+        ref={torchRef}
+        color="#ffd9b0"
+        intensity={70}
+        distance={46}
+        angle={0.62}
+        penumbra={0.55}
+        decay={1.4}
+        {...(torchTargetRef.current ? { target: torchTargetRef.current } : {})}
+      />
+
       {/* ghosts */}
       {Array.from({ length: POOL }).map((_, i) => (
         <group
