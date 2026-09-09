@@ -43,7 +43,9 @@ function makeGhosts(): Ghost[] {
 export function Scene() {
   const { camera, gl } = useThree();
   const town = useMemo(() => buildTown(), []);
-  const [faceTex, ghostTex] = useTexture([playerFace.url, ghostFace.url]);
+  const textures = useTexture([playerFace.url, ghostFace.url]) as THREE.Texture[];
+  const faceTex = textures[0]!;
+  const ghostTex = textures[1]!;
 
   const pos = useRef(new THREE.Vector3(0, 0, 24));
   const vel = useRef(new THREE.Vector3());
