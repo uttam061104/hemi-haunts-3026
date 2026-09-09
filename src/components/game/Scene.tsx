@@ -49,7 +49,7 @@ export function Scene() {
 
   const pos = useRef(new THREE.Vector3(0, 0, 24));
   const vel = useRef(new THREE.Vector3());
-  const yaw = useRef(Math.PI);
+  const yaw = useRef(0);
   const pitch = useRef(0);
   const keys = useRef<Record<string, boolean>>({});
   const firing = useRef(false);
