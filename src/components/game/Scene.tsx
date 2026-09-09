@@ -70,6 +70,8 @@ export function Scene() {
   const playerRef = useRef<THREE.Group>(null);
   const vmRef = useRef<THREE.Group>(null);
   const flashRef = useRef<THREE.PointLight>(null);
+  const torchRef = useRef<THREE.SpotLight>(null);
+  const torchTargetRef = useRef<THREE.Object3D>(null);
   const flash = useRef(0);
 
   const colliders: Box[] = town.buildings;
